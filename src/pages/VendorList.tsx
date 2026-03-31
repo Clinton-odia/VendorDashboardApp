@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Loader from "../component/LoadingComponent";
+import VendorCard from "../component/VendorCard";
 
 export default function VendorList() {
   const [data, setData] = useState([]);
@@ -26,12 +27,16 @@ export default function VendorList() {
     return <Loader />;
   }
   return (
-    <div style={{ margin: "" }}>
-      <ul>
-        {data.map((vendor) => (
-          <li key={vendor.id}>{vendor.name} </li>
-        ))}
-      </ul>
+    <div>
+      {data.map((vendor) => (
+        <VendorCard
+          key={vendor.id}
+          name={vendor.name}
+          email={vendor.email}
+          phone={vendor.phone}
+          company={vendor.company.name}
+        />
+      ))}
     </div>
   );
 }
