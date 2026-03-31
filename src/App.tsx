@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./component/Navbar";
 import LoginPage from "./pages/LoginPage";
 import { Routes, Route } from "react-router";
+import VendorList from "./pages/VendorList";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -14,15 +15,13 @@ function App() {
       {auth ? (
         <h1>Invalid login credentials</h1>
       ) : (
-        <div>
-          <Routes>
-            <Route
-              path="/login"
-              element={<LoginPage isLogin={handleAuth} />}
-            ></Route>
-            <Route path="/dashboard" element={<VendorList />}></Route>
-          </Routes>
-        </div>
+        <Routes>
+          <Route
+            path="/login"
+            element={<LoginPage isLogin={handleAuth} />}
+          ></Route>
+          <Route path="/dashboard" element={<VendorList />}></Route>
+        </Routes>
       )}
     </>
   );

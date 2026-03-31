@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Link, Route, Routes } from "react-router";
 import "../styles/Navbar.css";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
@@ -7,15 +7,15 @@ export default function NavBar() {
     <>
       <nav>
         <h1 className="logo">
-          <a>VendorDash </a>
+          <Link to={"/"}>VendorDash </Link>
         </h1>
 
         <ul>
           <li>
-            <a>Home</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <a>Dashboard</a>
+            <Link to={"/dashboard"}>Dashboard</Link>
           </li>
         </ul>
         <div className="btn-container">
