@@ -1,11 +1,10 @@
 import "./App.css";
+import NavBar from "./component/Navbar";
 
 function App() {
   return (
     <>
-      <section id="center"></section>
-
-      <section id="spacer"></section>
+      <NavBar />
     </>
   );
 }
