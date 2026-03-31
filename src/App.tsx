@@ -20,6 +20,7 @@ function App() {
               path="/login"
               element={<LoginPage isLogin={handleAuth} />}
             ></Route>
+            <Route path="/dashboard" element={<VendorList />}></Route>
           </Routes>
         </div>
       )}
