@@ -1,0 +1,22 @@
+.hero-container {
+  margin: 15px 2%;
+  background-image:
+    linear-gradient(rgba(32, 185, 78, 0.466), rgba(32, 167, 185, 0.466)),
+    url("../assets/background.jpg");
+  color: #fff;
+  text-align: center;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-title {
+  font-size: 45px;
+  color: #fdebd0;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: #e0f2f1;
+  font-weight: 700;
+}

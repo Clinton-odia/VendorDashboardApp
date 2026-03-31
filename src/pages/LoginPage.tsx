@@ -1,9 +1,9 @@
 import LoginComponent from "../component/Login";
 import "../styles/Login.css";
-const LoginPage = () => {
+const LoginPage = ({ isLogin }) => {
   return (
     <div className="loginpage">
-      <LoginComponent />
+      <LoginComponent isLogin={isLogin} />
     </div>
   );
 };

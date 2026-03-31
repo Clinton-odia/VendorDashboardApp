@@ -1,12 +1,28 @@
+import { useState } from "react";
 import "./App.css";
 import NavBar from "./component/Navbar";
 import LoginPage from "./pages/LoginPage";
+import { Routes, Route } from "react-router";
 
 function App() {
+  const [auth, setAuth] = useState(false);
+
+  const handleAuth = () => setAuth(() => true);
   return (
     <>
       <NavBar />
-      <LoginPage />
+      {auth ? (
+        <h1>Invalid login credentials</h1>
+      ) : (
+        <div>
+          <Routes>
+            <Route
+              path="/login"
+              element={<LoginPage isLogin={handleAuth} />}
+            ></Route>
+          </Routes>
+        </div>
+      )}
     </>
   );
 }
