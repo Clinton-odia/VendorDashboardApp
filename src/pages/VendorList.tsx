@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Loader from "../component/LoadingComponent";
 import VendorCard from "../component/VendorCard";
-
+import "../styles/VendorList.css";
 export default function VendorList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +27,7 @@ export default function VendorList() {
     return <Loader />;
   }
   return (
-    <div>
+    <div className="vendor-container">
       {data.map((vendor) => (
         <VendorCard
           key={vendor.id}
