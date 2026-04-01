@@ -40,10 +40,19 @@ Follow these instructions to get a local copy up and running on your machine.
 
 ### Installation & Execution
 
-1. **Clone the repository:**
+1. **Clone the repository and install dependencies:**
+
    ```bash
-   git clone https://github.com/Clinton-odia/VendorDashboardApp.git
+   git clone [https://github.com/Clinton-odia/VendorDashboardApp.git](https://github.com/Clinton-odia/VendorDashboardApp.git)
    cd VendorDashboardApp
    npm install
    npm run dev
+
+   ## 📸 Screenshots
    ```
+
+- **Login Page:** ![Login Page](./src/assets/loginScreenshot.png)
+
+- **Dashboard & Search:** ![Dashboard](./src/assets/homeScreenshot.png)
+
+- **Vendor Details:** ![Vendor Details](./src/assets/VendorDetail.png)
