@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Vendor Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Objective
 
-Currently, two official plugins are available:
+A React-based web application built as a practical assessment to demonstrate proficiency in fundamental React concepts, state management, API integration, and routing. The application allows a user to log in using a mocked authentication system, view a fetched list of vendors, search through them, and view individual vendor details.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- **Mock Authentication:** A secure-feeling login page that validates specific mock credentials before granting access to the dashboard.
+- **Vendor Dashboard:** Fetches and displays a list of vendors from a public API (`jsonplaceholder.typicode.com/users`), showing their Name, Email, Phone, and Company.
+- **Live Search Filtering:** Includes a search bar that instantly filters the displayed list of vendors by name using array `.filter()`.
+- **Dynamic Vendor Details:** Clicking on a specific vendor navigates to a dynamic route displaying deeper information (Website, Address, etc.).
+- **Logout Functionality:** Safely clears the user's authentication state and redirects them back to the login screen.
+- **UX Enhancements (Bonus):** Implements loading states while fetching data and graceful error handling for failed API calls.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack & Concepts Demonstrated
 
-## Expanding the ESLint configuration
+- **Frontend Framework:** React (Functional Components)
+- **Routing:** React Router DOM (`/login`, `/dashboard`, `/vendor/:id`)
+- **State Management:** React Hooks (`useState`, `useEffect`)
+- **API Integration:** Axios / Fetch API with Promises (`async/await`)
+- **Data Manipulation:** Array `.map()` and `.filter()`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔐 Mock Login Credentials
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+To test the application, please use the following credentials on the `/login` page:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Email:** `admin@test.com`
+- **Password:** `123456`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+_(Entering any other credentials will result in an "Invalid login credentials" error message)._
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚦 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these instructions to get a local copy up and running on your machine.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+
+- Node.js installed on your local machine.
+
+### Installation & Execution
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Clinton-odia/VendorDashboardApp.git
+   cd VendorDashboardApp
+   npm install
+   npm run dev
+   ```
