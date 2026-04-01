@@ -53,6 +53,7 @@ export default function VendorList() {
         <div className="vendor-container">
           {filterVendor.map((vendor) => (
             <VendorCard
+              vendorId={vendor.id}
               key={vendor.id}
               name={vendor.name}
               email={vendor.email}
@@ -65,6 +66,7 @@ export default function VendorList() {
         <div className="vendor-container">
           {data.map((vendor) => (
             <VendorCard
+              vendorId={vendor.id}
               key={vendor.id}
               name={vendor.name}
               email={vendor.email}

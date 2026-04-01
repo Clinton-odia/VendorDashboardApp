@@ -1,7 +1,8 @@
 import { Link, Route, Routes } from "react-router";
 import "../styles/Navbar.css";
 import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
+
+import VendorDetail from "../pages/VendorDetail";
 export default function NavBar() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function NavBar() {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/vendor/:id" element={<VendorDetail />}></Route>
       </Routes>
     </>
   );
