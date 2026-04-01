@@ -3,9 +3,10 @@ import "../styles/Navbar.css";
 
 interface data {
   auth: boolean;
+  logger: any;
 }
 
-export default function NavBar({ auth }: data) {
+export default function NavBar({ auth, logger }: data) {
   console.log(auth);
   return (
     <>
@@ -27,10 +28,15 @@ export default function NavBar({ auth }: data) {
         )}
 
         <div className="btn-container">
-          <Link to={"/login"}>
-            <button className="btn-primary">Login</button>
-          </Link>
-          <button className="btn-secondary">Logout</button>
+          {auth ? (
+            <button className="btn-secondary" onClick={logger}>
+              Logout
+            </button>
+          ) : (
+            <Link to={"/login"}>
+              <button className="btn-primary">Login</button>
+            </Link>
+          )}
         </div>
       </nav>
     </>

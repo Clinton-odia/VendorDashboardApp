@@ -11,9 +11,10 @@ function App() {
   const [auth, setAuth] = useState(false);
 
   const handleAuth = () => setAuth(() => true);
+  const logger = () => setAuth(() => false);
   return (
     <>
-      <NavBar auth={auth} />
+      <NavBar auth={auth} logger={logger} />
       {auth ? (
         <Routes>
           <Route
