@@ -6,7 +6,7 @@ import "../styles/VendorList.css";
 export default function VendorList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const fetchVendors = async () => {
       try {
@@ -26,17 +26,54 @@ export default function VendorList() {
   if (loading) {
     return <Loader />;
   }
+  const handleChange = (event) => {
+    const { value } = event?.target;
+    setSearch(() => value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+  const filterVendor = data.filter((vendor) =>
+    vendor.name.toLowerCase().includes(search.toLowerCase()),
+  );
+
   return (
-    <div className="vendor-container">
-      {data.map((vendor) => (
-        <VendorCard
-          key={vendor.id}
-          name={vendor.name}
-          email={vendor.email}
-          phone={vendor.phone}
-          company={vendor.company.name}
+    <>
+      <h1 className="dashboard-title">Vendor Dashboard</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search vendor"
+          name="search"
+          onChange={handleChange}
+          className="search"
         />
-      ))}
-    </div>
+      </form>
+      {search != "" ? (
+        <div className="vendor-container">
+          {filterVendor.map((vendor) => (
+            <VendorCard
+              key={vendor.id}
+              name={vendor.name}
+              email={vendor.email}
+              phone={vendor.phone}
+              company={vendor.company.name}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="vendor-container">
+          {data.map((vendor) => (
+            <VendorCard
+              key={vendor.id}
+              name={vendor.name}
+              email={vendor.email}
+              phone={vendor.phone}
+              company={vendor.company.name}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

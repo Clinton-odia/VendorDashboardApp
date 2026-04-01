@@ -19,7 +19,9 @@ export default function NavBar() {
           </li>
         </ul>
         <div className="btn-container">
-          <button className="btn-primary">Login</button>
+          <Link to={"/login"}>
+            <button className="btn-primary">Login</button>
+          </Link>
           <button className="btn-secondary">Logout</button>
         </div>
       </nav>
