@@ -53,6 +53,6 @@ Follow these instructions to get a local copy up and running on your machine.
 
 - **Login Page:** ![Login Page](./src/assets/loginScreenshot.png)
 
-- **Dashboard & Search:** ![Dashboard](./src/assets/homeScreenshot.png)
+- **Dashboard & Search:** ![Dashboard](./src/assets/Screenshot.png)
 
 - **Vendor Details:** ![Vendor Details](./src/assets/VendorDetail.png)
