@@ -15,7 +15,7 @@ export default function LoginComponent({ isLogin }) {
   };
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Form Data Submitted:", formData);
+    // console.log("Form Data Submitted:", formData);
     if (formData.email === "admin@test.com" && formData.password === "123456") {
       isLogin();
     }

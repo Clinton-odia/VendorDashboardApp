@@ -16,7 +16,7 @@ export default function VendorCard({
   phone,
   company,
 }: data) {
-  console.log(vendorId);
+  // console.log(vendorId);
   return (
     <div className="card-container">
       <div className="title-container">

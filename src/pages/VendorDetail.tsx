@@ -14,7 +14,7 @@ function VendorDetail() {
         const BASE_URL = `https://jsonplaceholder.typicode.com/users/${id}`;
         const response = await axios.get(BASE_URL);
         const data = response.data;
-        console.log(data);
+        // console.log(data);
         setVendorData(() => data);
       } catch (error) {
         console.log("the error is..." + error);
@@ -35,7 +35,7 @@ function VendorDetail() {
       <p>Website: {vendorData.website}</p>
       <p>Company:{vendorData.company.name}</p>
       <p>
-        Adress: {vendorData.address.street} {vendorData.address.city}
+        Address: {vendorData.address.street} {vendorData.address.city}
       </p>
     </div>
   );

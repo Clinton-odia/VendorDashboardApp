@@ -7,20 +7,26 @@ interface data {
 }
 
 export default function NavBar({ auth, logger }: data) {
-  console.log(auth);
+  // console.log(auth);
   return (
     <>
       <nav>
         <h1 className="logo">
-          <Link to={"/"}>VendorDash </Link>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            VendorDash{" "}
+          </Link>
         </h1>
         {auth ? (
           <ul>
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"} style={{ textDecoration: "none" }}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
+              <Link to={"/dashboard"} style={{ textDecoration: "none" }}>
+                Dashboard
+              </Link>
             </li>
           </ul>
         ) : (
